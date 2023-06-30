@@ -1,0 +1,11 @@
+.home-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .home-container {
+      font-size: 18px;
+    }
+  }
+  
