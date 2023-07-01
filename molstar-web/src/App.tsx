@@ -19,12 +19,13 @@ const App: React.FC = () => {
   return (
     <div>
       <Navbar loggedIn={loggedIn} handleLogout={handleLogout} />
-
+      {/* <div style={{ paddingTop: '60px' }}> */}
       <Routes>
         <Route path="/" element={loggedIn ? <Home /> : <Login onLogin={handleLogin} />} />
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
         <Route path="/register" element={<Register onRegister={handleLogin} />} />
       </Routes>
+      {/* </div> */}
     </div>
   );
 };

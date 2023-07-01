@@ -1,0 +1,17 @@
+.msp-plugin {
+    /* font-family: "Helvetica Neue", "Segoe UI", Helvetica, "Source Sans Pro", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0; */
+    position: relative !important; /* Change position to relative */
+    width: 100% !important; /* Set a width for the container */
+    height: 100% !important; /* Set a height for the container */
+    /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+    /* background */
+    /* highlight & toasts */
+    /* background: rgb(238, 236, 231); */
+  }

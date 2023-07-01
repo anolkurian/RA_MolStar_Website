@@ -4,6 +4,7 @@ import { PluginUISpec } from 'molstar/lib/mol-plugin-ui/spec';
 import { PluginConfig } from 'molstar/lib/mol-plugin/config';
 import { DefaultPluginUISpec } from 'molstar/lib/mol-plugin-ui/spec';
 import 'molstar/lib/mol-plugin-ui/skin/light.scss';
+import './MolstarContainer.css';
 
 interface MolstarContainerProps {
   url: string; // URL from where you want to download the data
@@ -28,7 +29,7 @@ const MolstarContainer: React.FC<MolstarContainerProps> = ({ url }) => {
     await plugin.builders.structure.hierarchy.applyPreset(trajectory, 'default');
   };
 
-  return <div id="molstar-container" style={{ width: '80%', height: '80vh' }}></div>;
+  return <div id="molstar-container" style={{ width: '100%vw', height: '450px' , paddingTop : '50px' }}></div>;
 };
 
 export default MolstarContainer;

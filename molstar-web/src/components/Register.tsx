@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Register.css';
+
 interface RegisterProps {
   onRegister: () => void;
 }
@@ -8,11 +9,35 @@ const Register: React.FC<RegisterProps> = ({ onRegister }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleRegister = (e: React.FormEvent) => {
+  const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Perform registration logic here
-    // Assuming successful registration for simplicity
-    onRegister();
+    
+    // Create a user object
+    const user = {
+      username,
+      password
+    };
+
+    try {
+      // Send a POST request to the registration endpoint
+      const response = await fetch('http://localhost:5000/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+      });
+
+      if (response.ok) {
+        // Registration successful
+        onRegister();
+      } else {
+        // Registration failed
+        console.error('Registration failed');
+      }
+    } catch (error) {
+      console.error('Error during registration:', error);
+    }
   };
 
   return (
