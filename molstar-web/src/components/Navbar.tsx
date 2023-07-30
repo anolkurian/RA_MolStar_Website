@@ -11,16 +11,21 @@ const Navbar: React.FC<NavbarProps> = ({ loggedIn, handleLogout }) => {
   return (
     <nav className='navbar'>
       <ul>
-        <li>
+        {/* <li>
           <Link to="/">Home</Link>
-        </li>
+        </li> */}
         <li>
           {loggedIn ? (
-            <button onClick={handleLogout}>Logout</button>
+            <Link to="/" onClick={handleLogout}>Logout</Link>
           ) : (
             <Link to="/login">Login</Link>
           )}
         </li>
+        {loggedIn ? null : (
+          <li>
+            <Link to="/register">Register</Link>
+          </li>
+        )}
       </ul>
     </nav>
   );

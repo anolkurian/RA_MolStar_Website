@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Login from './components/Login';
-import Register from './components/Register';
+import Registeration from './components/Registration';
 import Navbar from './components/Navbar';
 
 const App: React.FC = () => {
@@ -23,7 +23,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={loggedIn ? <Home /> : <Login onLogin={handleLogin} />} />
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
-        <Route path="/register" element={<Register onRegister={handleLogin} />} />
+        <Route path="/register" element={<Registeration onRegister={handleLogout} />} />
       </Routes>
       {/* </div> */}
     </div>
